@@ -1,0 +1,7 @@
+{
+    "dependencies": ["."],
+    "graphs": {
+        "pet_gift_agent": "./pet_gift_agent.py:agent"
+    },
+    "env": ".env"
+}
