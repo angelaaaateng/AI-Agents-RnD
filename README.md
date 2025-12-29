@@ -12,11 +12,14 @@ An intelligent AI agent that helps users find perfect Christmas gifts for their 
 📍 **Location-aware**: Adapts recommendations for different countries and regions  
 ⚡ **Streaming Responses**: Real-time response generation for better user experience  
 📸 **Multimodal**: Can analyze pet photos to provide personalized recommendations  
+💬 **Conversation Memory**: Maintains context across multiple interactions  
+🛍️ **Local Store Finder**: Locates nearby pet stores and retailers  
 
 ### Project Structure
 
 - `pet_gift_agent.py` - Main agent implementation with web search tools
-- `pet_gift_agent_tutorial.ipynb` - Interactive tutorial showing agent capabilities
+- `pet_gift_agent_tutorial.ipynb` - Interactive tutorial with practical examples
+- `test_execution.ipynb` - Additional testing and experimentation notebook
 - `langgraph_pet_gift.json` - LangGraph deployment configuration
 - `pyproject.toml` - Project dependencies and configuration
 - `example.env` - Environment variables template
@@ -54,6 +57,45 @@ An intelligent AI agent that helps users find perfect Christmas gifts for their 
    ```bash
    uv run jupyter lab pet_gift_agent_tutorial.ipynb
    ```
+
+## Usage Examples
+
+### Basic Pet Gift Recommendations
+
+```python
+from pet_gift_agent import agent
+from langchain.messages import HumanMessage
+
+# Configuration for conversation memory
+config = {"configurable": {"thread_id": "pet_gift_session_1"}}
+
+# Ask for gift recommendations
+response = agent.invoke(
+    {"messages": [HumanMessage(content="I have a playful orange tabby cat. What Christmas gifts would be perfect for him?")]},
+    config
+)
+
+print(response['messages'][-1].content)
+```
+
+### Location-Aware Shopping
+
+```python
+# Find local stores and retailers
+response = agent.invoke(
+    {"messages": [HumanMessage(content="I'm in Austin, Texas. Where can I buy interactive cat toys locally?")]},
+    config
+)
+
+print(response['messages'][-1].content)
+```
+
+### Command Line Usage
+
+```python
+# Run directly from command line
+python pet_gift_agent.py
+```
 
 ## Required API Keys
 

@@ -73,7 +73,7 @@ Always prioritize pet safety and provide real, purchasable products with current
 
 # Create the agent
 agent = create_agent(
-    model="gpt-4o-mini",
+    model="gpt-5-nano",
     tools=[web_search, pet_gift_search, local_store_search],
     system_prompt=system_prompt
     # No checkpointer needed - LangGraph API handles persistence automatically

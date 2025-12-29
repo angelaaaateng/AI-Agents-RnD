@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "name": "Documentation Sync",
+  "description": "Listens to Python source files and configuration files, then asks the agent to update documentation in README.md when changes are detected",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "*.py",
+      "*.ipynb",
+      "pyproject.toml",
+      "requirements.txt"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "I've made changes to source files in this Python project. Please review the changes and update the README.md file to reflect any new functionality, API changes, or usage instructions. Make sure the documentation stays current with the codebase."
+  }
+}
