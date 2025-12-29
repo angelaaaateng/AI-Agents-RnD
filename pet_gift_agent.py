@@ -13,7 +13,7 @@ load_dotenv()
 
 # Enable LangSmith tracing
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGCHAIN_PROJECT"] = "pet-gift-finder-tutorial"
+os.environ["LANGCHAIN_PROJECT"] = "ai-agents-pet-gift-finder"
 
 from langchain.tools import tool
 from tavily import TavilyClient
